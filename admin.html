@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Connect to Metamask</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+      <a class="pure-menu-heading" href="/index2.html">Airdropper for GitHub Contributors</a>
+
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item pure-menu-selected"><a href="/index2.html" class="pure-menu-link">Home</a></li>
+        <li class="pure-menu-item"><a href="/admin.html" class="pure-menu-link">Admin</a></li>
+        <li class="pure-menu-item"><button id="connectBtn" class="pure-button pure-button-primary">Connect to Metamask</button></li>
+      </ul>
+      <div id="wallet_info" hidden="">
+        Wallet Address:<span id="wallet_address"></span>
+        Balance:<span id="wallet_balance"></span>eth
+      </div>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="content">
+      <h3 class="content-head is-center">Admin operations</h3>
+    </div>
+    <div class="pure-g">
+      <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+        <form class="pure-form pure-form-stacked">
+          <fieldset>
+            <input id="input_update" type="text" placeholder="GitHub Account">
+            <input type="submit" value="Create Flow" class="pure-button"></input>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+        <form class="pure-form pure-form-stacked">
+          <fieldset>
+            <input id="input_update_other_opeartion" type="text" placeholder="input parameter">
+            <input type="submit" value="Placeholder for new function" class="pure-button"></input>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
