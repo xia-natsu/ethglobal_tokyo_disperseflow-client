@@ -77,7 +77,7 @@ const registerUser = async (contract, accounts) => {
     e.preventDefault();
     await contract.methods
       .register(input)
-      .send({ from: accounts[0], gas: 10000 });
+      .send({ from: accounts[0], gas: 10000000 });
     displayGreeting(greeting, contract);
   });
 };
@@ -91,8 +91,8 @@ const createUserFlow = async (contract, accounts) => {
     console.log('flowing:' +input)
     e.preventDefault();
     await contract.methods
-      .disperseTokenByAccount('0x96B82B65ACF7072eFEb00502F45757F254c2a0D4', [input,input], [10000,10000])
-      .send({ from: accounts[0], gas: 50000 });
+      .disperseTokenByAccount('0x96B82B65ACF7072eFEb00502F45757F254c2a0D4', [input], [10])
+      .send({ from: accounts[0], gas: 500000000 });
   });
 };
 async function greetingApp() {
