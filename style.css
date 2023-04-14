@@ -1,0 +1,73 @@
+body {
+
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Styles for connect button */
+button {
+  background-color: #f44336;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  padding: 12px 24px;
+}
+
+button:hover {
+  background-color: #e53935;
+}
+
+button:focus {
+  outline: none;
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Styles for wallet info section */
+#wallet_info {
+
+  margin: 20px;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+#wallet_address {
+  font-size: 18px;
+  margin: 10px;
+  overflow: visible;
+  font-weight: bold;
+  color: #333;
+}
+
+#wallet_balance {
+  font-size: 18px;
+  margin: 10px;
+  overflow: visible;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styles for connected button */
+.connected {
+  background-color: #4CAF50;
+}
+
+.connected:hover {
+  background-color: #388E3C;
+}
