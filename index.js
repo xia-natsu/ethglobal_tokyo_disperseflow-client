@@ -91,7 +91,7 @@ const createUserFlow = async (contract, accounts) => {
     e.preventDefault();
     await contract.methods
       .disperseTokenByAccount('0x96B82B65ACF7072eFEb00502F45757F254c2a0D4', [input], [10])
-      .send({ from: accounts[0], gas: 500000000 });
+      .send({ from: accounts[0], gas: 5000000 });
   });
 };
 async function greetingApp() {
