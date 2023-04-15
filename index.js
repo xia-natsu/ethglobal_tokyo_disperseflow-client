@@ -94,11 +94,14 @@ const createUserFlow = async (contract, accounts) => {
 const createWithdrawClickHandler = async (contract, accounts) => {
   document.getElementById('form_withdrawal').addEventListener('submit', async (e) => {
     e.preventDefault();
-    const input = document.getElementById('input_withdrawal').value;
-
-    await contract.methods
-      .withdrawFunds(input)
-      .send({from: accounts[0], gas: 10000000});
+    const tokenAddr = document.getElementById('token_address').value;
+    if(tokenAddr !== '0') {
+      await contract.methods
+        .withdrawFunds(tokenAddr)
+        .send({from: accounts[0], gas: 10000000});
+    } else {
+      console.log('please select a token.')
+    }
   });
 }
 
