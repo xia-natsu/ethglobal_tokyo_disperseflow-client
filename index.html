@@ -1,48 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Connect to Metamask</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-  <main>
-  
-  <button id="connectBtn">Connect to Metamask</button>
-  
-  <button id="githubBtn" onclick="authorizeGithub()">Authorize GitHub Account</button>
-  <div id="github-username"></div>
-  <h2>Your GitHub Account: <span id="github_name"></span></h2>
+<div class="header">
+  <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+    <a class="pure-menu-heading" href="/index2.html">Airdropper for GitHub Contributors</a>
 
-  
-  <!--<button type="submit" name="submit-button" class="primary-button" href="https://github.com/login/oauth/authorize?client_id=Iv1.4388b83a16e301f8&redirect_uri=http://localhost:8080/index.html&scope=repo,user">Authorize with GitHub</button>
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item pure-menu-selected"><a href="/index.html" class="pure-menu-link">Home</a></li>
+      <li class="pure-menu-item"><a href="/index2.html" class="pure-menu-link">User</a></li>
+      <li class="pure-menu-item"><a href="/admin.html" class="pure-menu-link">Admin</a></li>
+    </ul>
+  </div>
+</div>
 
-<a href="https://github.com/login/oauth/authorize?client_id=Iv1.4388b83a16e301f8&redirect_uri=http://localhost:8080/index.html&scope=repo,user">Authorize with GitHub</a>-->
+<div class="splash-container">
+  <div class="splash">
+    <img src="airdropper_for_github_contributor_banner.png" width="320" height="180">
+    <p class="splash-subhead">
+      Get your rewards for your contributions to open source projects on GitHub fluently.
+    </p>
+    <p>
+      <a href="index2.html" class="pure-button pure-button-primary">Get Started</a>
+    </p>
+  </div>
+</div>
 
-<h1>** Disperse Flow Dapp **</h1>
-    <br/>
 
-    <h2></h2>
-    <form id="form"> register
-        <input id="input" type="text"/>
-        <input type="submit" value="submit"/>
-    </form>
-    <form id="form_flow"> create flow
-        <input id="input_update" type="text"/>
-        <input type="submit" value="submit"/>
-    </form>
-    
-<div class="info-container">
-  <section id="wallet_info" hidden>
-    <h1 id="address">Wallet Address: <span id="wallet_address"></span></h1>
-    <h2 id="balance">Balance: <span id="wallet_balance"></span>eth</h2>
-  </section> 
-    </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"></script>
-  <script src="index.js"></script>
-  </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
