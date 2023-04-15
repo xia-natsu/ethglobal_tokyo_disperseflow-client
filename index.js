@@ -105,6 +105,25 @@ const createWithdrawClickHandler = async (contract, accounts) => {
   });
 }
 
+const createUpdateFlowByAccountClickHandler = async (contract, accounts) => {
+  document.getElementById('updateFlowByAccountForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const tokenAddr = document.getElementById('token_address').value;
+    const rate = document.getElementById('input_rate').value;
+    const account = document.getElementById('input_account').value;
+    if(tokenAddr !== '0') {
+      console.log(tokenAddr);
+      console.log(rate);
+      console.log(account);
+      await contract.methods
+        .updateFlowByAccount(tokenAddr, account, rate)
+        .send({from: accounts[0], gas: 10000000});
+    } else {
+      console.log('please select a token.')
+    }
+  });
+}
+
 async function initialize() {
   const web3 = await getWeb3();
   const accounts = await web3.eth.getAccounts();
@@ -114,6 +133,7 @@ async function initialize() {
   registerUser(contract, accounts);
   createUserFlow(contract, accounts);
   createWithdrawClickHandler(contract, accounts);
+  createUpdateFlowByAccountClickHandler(contract, accounts);
 }
 
 initialize();

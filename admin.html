@@ -42,10 +42,19 @@
     </div>
     <div class="pure-g">
       <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
-        <form class="pure-form pure-form-stacked">
+        <form id="updateFlowByAccountForm" class="pure-form pure-form-stacked">
           <fieldset>
-            <input id="input_update_other_opeartion" type="text" placeholder="input parameter">
-            <input type="submit" value="Placeholder for new function" class="pure-button"></input>
+            <input id="input_account" type="text" placeholder="Github account">
+            <select id="token_address">
+              <option value="0">Select a token</option>
+              <option value="0x5D8B4C2554aeB7e86F387B4d6c00Ac33499Ed01f">Super fDAI Fake Token</option>
+              <option value="0xbe49ac1EadAc65dccf204D4Df81d650B50122aB2">fUSDC Fake Token</option>
+            </select>
+            <div>
+              <span>Rate:</span>
+              <input id="input_rate" type="number" value="30">
+            </div>
+            <input type="submit" value="updateFlowByAccount" class="pure-button"></input>
           </fieldset>
         </form>
       </div>
