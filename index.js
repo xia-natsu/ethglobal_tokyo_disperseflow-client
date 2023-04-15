@@ -10,6 +10,7 @@ const getWeb3 = async () => {
   });
 };
 window.addEventListener('load', async () => {
+  console.log('window loaded');
   if (window.ethereum) {
     window.web3 = new Web3(window.ethereum);
     await window.ethereum.enable();
@@ -18,11 +19,10 @@ window.addEventListener('load', async () => {
   } else {
     console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
   }
-
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
+  console.log('DOM loaded');
   const connectButton = document.getElementById("connectBtn");
   const updateButton = (wallet_connected) => {
     if (wallet_connected) {
@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("wallet_info").removeAttribute("hidden")
 
     updateButton(wallet_connected);
-
   })
 });
 
@@ -63,7 +62,6 @@ const getContract = async (web3) => {
   );
   return flow;
 };
-
 
 const registerUser = async (contract, accounts) => {
   let input;
@@ -93,6 +91,17 @@ const createUserFlow = async (contract, accounts) => {
   });
 };
 
+const createWithdrawClickHandler = async (contract, accounts) => {
+  document.getElementById('form_withdrawal').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = document.getElementById('input_withdrawal').value;
+
+    await contract.methods
+      .withdraw(input)
+      .send({from: accounts[0], gas: 10000000});
+  });
+}
+
 async function initialize() {
   const web3 = await getWeb3();
   const accounts = await web3.eth.getAccounts();
@@ -101,6 +110,7 @@ async function initialize() {
 
   registerUser(contract, accounts);
   createUserFlow(contract, accounts);
+  createWithdrawClickHandler(contract, accounts);
 }
 
 initialize();
