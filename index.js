@@ -97,7 +97,7 @@ const createWithdrawClickHandler = async (contract, accounts) => {
     const input = document.getElementById('input_withdrawal').value;
 
     await contract.methods
-      .withdraw(input)
+      .withdrawFunds(input)
       .send({from: accounts[0], gas: 10000000});
   });
 }
