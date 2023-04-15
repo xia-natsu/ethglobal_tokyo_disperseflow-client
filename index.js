@@ -72,13 +72,12 @@ const registerUser = async (contract, accounts) => {
   $("#input").on("change", (e) => {
     input = e.target.value;
   });
-  $("#form").on("submit", async (e) => {
+  $("#form_register").on("submit", async (e) => {
     console.log('registering:' +input)
     e.preventDefault();
     await contract.methods
       .register(input)
       .send({ from: accounts[0], gas: 10000000 });
-    displayGreeting(greeting, contract);
   });
 };
 
@@ -99,6 +98,7 @@ async function greetingApp() {
   const web3 = await getWeb3();
   const accounts = await web3.eth.getAccounts();
   const contract = await getContract(web3);
+  console.log('Contract loaded')
 
   registerUser(contract, accounts);
   createUserFlow(contract, accounts);
