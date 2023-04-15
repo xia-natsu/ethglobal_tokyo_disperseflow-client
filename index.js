@@ -83,11 +83,11 @@ const registerUser = async (contract, accounts) => {
 
 const createUserFlow = async (contract, accounts) => {
   let input;
-  $("#input_update").on("change", (e) => {
+  $("#input_create_userflow").on("change", (e) => {
     input = e.target.value;
   });
-  $("#form_flow").on("submit", async (e) => {
-    console.log('flowing:' +input)
+  $("#form_create_userflow").on("submit", async (e) => {
+    console.log('Create flow:' +input)
     e.preventDefault();
     await contract.methods
       .disperseTokenByAccount('0x96B82B65ACF7072eFEb00502F45757F254c2a0D4', [input], [10])
